@@ -11,7 +11,7 @@ var db_user = 'salman',
     + db_password + '@ds051740.mlab.com:51740/devconnector1';
 
 module.exports = {
-  port: process.env.PORT || 8888,
+  // port: process.env.PORT || 8888,
   db: {
     uri: db_uri
   },
