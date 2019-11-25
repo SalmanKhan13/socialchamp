@@ -27,10 +27,22 @@ app.get('/', (request, response) => {
   response.sendFile('./public/index.html')
 });
 
-//app.get('/auth',(req, res)=> {
-// console.log(res);
-// res.send(req.query.code);
-//});
+app.get('/auth', (req, res) => {
+  console.log(req.query.code);
+  var params = {
+    app_id: '445969309446550',
+    app_secret: '291958d2c06000112ee51d34657b6beb',
+    grant_type: 'authorization_code',
+    redirect_uri: 'https://insta.humwell.com:8888/auth',
+    code: req.query.code
+  }
+  axios.post('https://api.instagram.com/oauth/access_token', params).then(response => {
+    console.log(response);
+    res.send(response.data);
+
+
+  }).catch(err => res.status(404).json(err));
+});
 
 
 app.get('/login', function (request, response) {
