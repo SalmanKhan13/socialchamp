@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Page Title</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <!-- <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+  <script src='main.js'></script> -->
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+
+<script>
+  $.ajax({
+    type: 'POST',
+    // make sure you respect the same origin policy with this url:
+    // http://en.wikipedia.org/wiki/Same_origin_policy
+    url: 'https://api.instagram.com/oauth/access_token',
+    data: {
+      'app_id': '445969309446550',
+      'app_secret': '291958d2c06000112ee51d34657b6beb',
+      'grant_type': 'authorization_code',
+      'redirect_uri': 'https://insta.humwell.com:8888/auth',
+      'code': 'AQBvaOAAcIzL-c1UlM_2x79WGpYUY3EMWV_ghkNz729si2oyXBdoRUVlevXUe57nyZKPP5hkBExr9VoKtLhk5ABpoVR2hlP7cWyhgPif9MqwTbArVUXp6MI_ksDj51vwAoVZx_6LOnmtEm25SsSVxaWmkkRBVEE3w_hZlSbskEXRNVJCCWRMkL6wo7GSMPt1d0Waiv6W0WOB2cVLwz5jkojFz-FUy5N4e4RFMpbtkUCQFw'
+    },
+    success: function (msg) {
+      debugger;
+      alert('wow' + msg);
+    }
+  });
+</script>

@@ -34,10 +34,11 @@ app.get('/', (request, response) => {
   response.sendFile('./public/index.html')
 });
 
-// app.get('/auth', (req, res) => {
-//   //console.log(req.query.code);
-//   res.render(307, '/test');
-// });
+app.get('/auth', (req, res) => {
+  //console.log(req.query.code);
+  res.redirect('/access_token_request.html');
+  console.log("it hits the access page");
+});
 
 // app.post('/test', (req, res) => {
 //   var params = {
